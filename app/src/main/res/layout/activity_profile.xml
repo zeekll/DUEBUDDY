@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+        <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+            <ImageView
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_gravity="center"
+    android:src="@drawable/ic_account_circle"/>
+            <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="10dp"
+    android:text="My Profile"
+    android:textColor="#537E6D"
+    android:textSize="25sp"
+    android:textStyle="bold"/>
+            <EditText
+    android:id="@+id/etProfileUsername"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="25dp"
+    android:hint="Username"/>
+            <EditText
+    android:id="@+id/etProfilePassword"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:hint="Password"
+    android:inputType="textPassword"/>
+            <EditText
+    android:id="@+id/etProfilePhone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:hint="Phone Number"
+    android:inputType="phone"/>
+            <Button
+    android:id="@+id/btnSaveProfile"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="22dp"
+    android:backgroundTint="#537E6D"
+    android:text="SAVE CHANGES"/>
+            <Button
+    android:id="@+id/btnLogout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:backgroundTint="#D32F2F"
+    android:text="LOG OUT"/>
+        </LinearLayout>
+    </ScrollView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+    android:id="@+id/bottomNav"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    app:itemIconTint="#537E6D"
+    app:itemTextColor="#537E6D"
+    app:menu="@menu/bottom_nav_menu"/>
+</LinearLayout>

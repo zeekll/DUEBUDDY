@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">DueBuddy</string>
+
+    <string name="welcome_duebuddy">Welcome to DueBuddy!</string>
+
+    <string name="add_bill">+ ADD BILL</string>
+
+    <string name="no_bill">No bills added yet.</string>
+
+    <string name="duebuddy_logo">DueBuddy Logo</string>
+
+</resources>

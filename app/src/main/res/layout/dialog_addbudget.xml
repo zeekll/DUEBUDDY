@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Budget Item"
+        android:textColor="#537E6D"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        android:textColor="#666666"
+        android:textSize="14sp" />
+
+    <Spinner
+        android:id="@+id/spinnerBudgetCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textColor="#666666"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/etBudgetDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Example: Groceries"
+        android:inputType="textCapSentences"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amount"
+        android:textColor="#666666"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/etBudgetAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="₱0.00"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/btnSaveBudgetItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#537E6D" />
+
+</LinearLayout>

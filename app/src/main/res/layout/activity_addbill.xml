@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+        <ImageView
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_gravity="center"
+    android:src="@drawable/duebuddylogo"
+    android:contentDescription="DueBuddy Logo"/>
+        <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="20dp"
+    android:text="Add New Bill"
+    android:textColor="#537E6D"
+    android:textSize="24sp"
+    android:textStyle="bold"/>
+        <!-- Bill Name -->
+        <EditText
+    android:id="@+id/etBillName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Bill Name"
+    android:inputType="text"/>
+        <!-- Account Holder -->
+        <EditText
+    android:id="@+id/etAccountHolder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:hint="Account Holder"
+    android:inputType="text"/>
+        <!-- Category -->
+        <Spinner
+    android:id="@+id/spCategory"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"/>
+        <!-- Amount -->
+        <EditText
+    android:id="@+id/etAmount"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:hint="Amount"
+    android:inputType="numberDecimal"/>
+        <!-- Due Date -->
+        <EditText
+    android:id="@+id/etDueDate"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:hint="Due Date"
+    android:focusable="false"
+    android:clickable="true"/>
+        <!-- Recurring -->
+        <CheckBox
+    android:id="@+id/cbRecurring"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:text="Recurring Bill"/>
+        <!-- Start Date -->
+        <EditText
+    android:id="@+id/etStartDate"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:hint="Start Date"
+    android:focusable="false"
+    android:clickable="true"/>
+        <!-- End Date (Optional) -->
+        <EditText
+    android:id="@+id/etEndDate"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:hint="End Date (Optional)"
+    android:focusable="false"
+    android:clickable="true"/>
+        <!-- Notes -->
+        <EditText
+    android:id="@+id/etNotes"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:layout_marginTop="12dp"
+    android:gravity="top|start"
+    android:hint="Notes (Optional)"
+    android:inputType="textMultiLine"
+    android:minLines="4"/>
+        <Button
+    android:id="@+id/btnSave"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="25dp"
+    android:backgroundTint="#537E6D"
+    android:text="SAVE BILL"
+    android:textStyle="bold"/>
+    </LinearLayout>
+</ScrollView>
