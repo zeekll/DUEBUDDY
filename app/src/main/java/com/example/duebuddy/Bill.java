@@ -131,6 +131,78 @@ public class Bill {
         return "Upcoming";
     }
 
+    // =========================================================
+    // DASHBOARD CATEGORY (used by the Home pie chart)
+    // =========================================================
+
+    public static final String CATEGORY_PAID = "Paid";
+    public static final String CATEGORY_OVERDUE = "Overdue";
+    public static final String CATEGORY_DUE_SOON = "Due Soon";
+    public static final String CATEGORY_UNPAID = "Unpaid";
+
+    private static final int DEFAULT_DUE_SOON_DAYS = 3;
+
+    /**
+     * Buckets this bill into one of the four dashboard categories:
+     * Paid, Overdue, Due Soon, or Unpaid. Bills due within the next
+     * {@link #DEFAULT_DUE_SOON_DAYS} days (including today) count as
+     * "Due Soon". Drives the pie chart on the Home dashboard.
+     */
+    public String getDashboardCategory() {
+        return getDashboardCategory(DEFAULT_DUE_SOON_DAYS);
+    }
+
+    public String getDashboardCategory(int dueSoonDays) {
+        if ("Paid".equalsIgnoreCase(status)) {
+            return CATEGORY_PAID;
+        }
+
+        Date due = parseDate(dueDate);
+
+        if (due == null) {
+            return CATEGORY_UNPAID;
+        }
+
+        Calendar dueDay = Calendar.getInstance();
+        dueDay.setTime(due);
+        clearTime(dueDay);
+
+        Calendar today = Calendar.getInstance();
+        clearTime(today);
+
+        if (dueDay.before(today)) {
+            return CATEGORY_OVERDUE;
+        }
+
+        Calendar soonCutoff = (Calendar) today.clone();
+        soonCutoff.add(Calendar.DAY_OF_YEAR, dueSoonDays);
+
+        if (!dueDay.after(soonCutoff)) {
+            return CATEGORY_DUE_SOON;
+        }
+
+        return CATEGORY_UNPAID;
+    }
+
+    /**
+     * True when this bill's due date falls within the given
+     * calendar year/month (Calendar.MONTH is 0-based). Used to total
+     * up how much was paid during the current month on the dashboard.
+     */
+    public boolean isDueInMonth(int year, int month) {
+        Date due = parseDate(dueDate);
+
+        if (due == null) {
+            return false;
+        }
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(due);
+
+        return cal.get(Calendar.YEAR) == year
+                && cal.get(Calendar.MONTH) == month;
+    }
+
     private static Date parseDate(String value) {
         if (value == null || value.trim().isEmpty()) {
             return null;
